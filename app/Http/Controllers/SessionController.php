@@ -2,26 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
-use App\Http\Requests\StoreJobRequest;
-use App\Http\Requests\UpdateJobRequest;
-use App\Models\Tag;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
 
-class JobController extends Controller
+class SessionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $jobs = Job::all()->groupBy('featured');
-
-        return view('jobs.index',[
-            'featuredJobs' => $jobs[0],
-            'jobs' => $jobs[1],
-            'tags' => Tag::all()
-        ]);
+        //
     }
 
     /**
@@ -35,7 +25,7 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreJobRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -43,7 +33,7 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Job $job)
+    public function show(string $id)
     {
         //
     }
@@ -51,7 +41,7 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Job $job)
+    public function edit(string $id)
     {
         //
     }
@@ -59,7 +49,7 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateJobRequest $request, Job $job)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -67,7 +57,7 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Job $job)
+    public function destroy(string $id)
     {
         //
     }
